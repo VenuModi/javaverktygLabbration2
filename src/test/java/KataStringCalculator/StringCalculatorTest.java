@@ -21,8 +21,14 @@ public class StringCalculatorTest {
 
     @Test
     @DisplayName("Step-1 : Test-3")
-    void checkIfStringOfNumbersReturnsSum(){
+    void checkIfStringOfTwoNumbersReturnsSum(){
 
         assertEquals(3, StringCalculator.add("1,2"));
+    }
+
+    @Test
+    @DisplayName("Step-2 : Test-1")
+    void checkIfAdditionOfMultipleNumbersReturnsSum(){
+        assertEquals(10, StringCalculator.add("5,2,3"));
     }
 }
