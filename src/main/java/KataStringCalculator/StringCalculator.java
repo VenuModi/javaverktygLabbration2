@@ -25,8 +25,9 @@ public class StringCalculator {
                 int checkValidNum = Integer.parseInt(num);
                 if (checkValidNum < 0){
                     negativeNumbers.add(checkValidNum);
+                } else if (checkValidNum < 1001) {
+                    result += checkValidNum;
                 }
-                result += checkValidNum;
             }catch (NumberFormatException e){
                 System.out.println("String contains negative numbers");
             }

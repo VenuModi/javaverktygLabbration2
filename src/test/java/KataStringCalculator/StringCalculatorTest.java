@@ -47,9 +47,14 @@ public class StringCalculatorTest {
 
     @Test
     @DisplayName("Step-5 : Test - 1")
-    void CheckIfPassingANegativeNumberThrowsAnException(){
-        assertThatThrownBy(() -> StringCalculator.add("-1,-3,-4, 2")).
+    void checkIfPassingANegativeNumberThrowsAnException(){
+        assertThatThrownBy(() -> StringCalculator.add("-1,-3,-4,2")).
                 hasMessageContaining("Negatives not allowed: [-1, -3, -4]");
     }
 
+    @Test
+    @DisplayName("Step-6 : Test-1")
+    void checkIfNumbersBiggerThanThousandAreIgnored(){
+        assertEquals(2, StringCalculator.add("2,1005"));
+    }
 }
