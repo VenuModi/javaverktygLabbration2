@@ -2,6 +2,7 @@ package KataStringCalculator;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class StringCalculator {
     public static int add(String number) {
@@ -12,9 +13,14 @@ public class StringCalculator {
         String delimeter = "[,\n]";
         if (number.startsWith("//")){
           int index = number.indexOf("//") +2;
-          delimeter = number.substring(index, index + 1);
+          String customPatterns = number.substring(index, number.indexOf("\n", index));
+          if (customPatterns.startsWith("[") && customPatterns.endsWith("]")){
+              customPatterns = customPatterns.substring(1, customPatterns.length()-1);
+              delimeter = Pattern.quote(customPatterns);
+          } else {
+              delimeter = "[" + Pattern.quote(customPatterns) + "\n]";
+          }
           number = number.substring(number.indexOf("\n") + 1);
-          delimeter = "[" + delimeter + "\n]";
         }
 
         int result = 0;

@@ -57,4 +57,10 @@ public class StringCalculatorTest {
     void checkIfNumbersBiggerThanThousandAreIgnored(){
         assertEquals(2, StringCalculator.add("2,1005"));
     }
+
+    @Test
+    @DisplayName("Step-7 : Test-1")
+    void checkDelimetersOfAnyLengthReturnsSix(){
+        assertEquals(6, StringCalculator.add("//[***]\n1***2***3"));
+    }
 }
