@@ -31,4 +31,10 @@ public class StringCalculatorTest {
     void checkIfAdditionOfMultipleNumbersReturnsSum(){
         assertEquals(10, StringCalculator.add("5,2,3"));
     }
+
+    @Test
+    @DisplayName("Step-3 : Test-1")
+    void checkIfAddMethodHandlesNewLinesBetweenNumbers(){
+        assertEquals(6,StringCalculator.add("1\n2,3"));
+    }
 }

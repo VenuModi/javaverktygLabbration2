@@ -3,11 +3,13 @@ package KataStringCalculator;
 public class StringCalculator {
 
     public static int add(String number) {
+
+
         if (number.equals("")){
             return 0;
         } else if (number.contains(",")) {
             int result = 0;
-            for (String num : number.split(",")) {
+            for (String num : number.split(",|\n")) {
                 result += Integer.parseInt(num);
             }
             return result;
