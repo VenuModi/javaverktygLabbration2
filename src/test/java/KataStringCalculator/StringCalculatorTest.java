@@ -3,6 +3,7 @@ package KataStringCalculator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.AssertionsForClassTypes.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class StringCalculatorTest {
@@ -43,4 +44,12 @@ public class StringCalculatorTest {
     void checkIfAdditionSupportsDifferentDelimeters(){
         assertEquals(3, StringCalculator.add("//;\n1;2"));
     }
+
+    @Test
+    @DisplayName("Step-5 : Test - 1")
+    void CheckIfPassingANegativeNumberThrowsAnException(){
+        assertThatThrownBy(() -> StringCalculator.add("-1,-3,-4, 2")).
+                hasMessageContaining("Negatives not allowed: [-1, -3, -4]");
+    }
+
 }
