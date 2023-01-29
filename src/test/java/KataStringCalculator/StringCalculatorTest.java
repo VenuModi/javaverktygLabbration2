@@ -37,4 +37,10 @@ public class StringCalculatorTest {
     void checkIfAddMethodHandlesNewLinesBetweenNumbers(){
         assertEquals(6,StringCalculator.add("1\n2,3"));
     }
+
+    @Test
+    @DisplayName("Step-4 : Test-1")
+    void checkIfAdditionSupportsDifferentDelimeters(){
+        assertEquals(3, StringCalculator.add("//;\n1;2"));
+    }
 }
