@@ -18,4 +18,11 @@ public class StringCalculatorTest {
     void checkIfTheSumOfASingleNumberIsTheSameNumber(){
         assertEquals(1, StringCalculator.add("1"));
     }
+
+    @Test
+    @DisplayName("Step-1 : Test-3")
+    void checkIfStringOfNumbersReturnsSum(){
+
+        assertEquals(3, StringCalculator.add("1,2"));
+    }
 }
