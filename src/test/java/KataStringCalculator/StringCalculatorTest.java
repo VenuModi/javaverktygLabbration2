@@ -12,4 +12,10 @@ public class StringCalculatorTest {
     void checkIfEmptyStringReturnsEmpty(){
         assertEquals(0, StringCalculator.add(""));
     }
+
+    @Test
+    @DisplayName("Step-1 : Test-2")
+    void checkIfTheSumOfASingleNumberIsTheSameNumber(){
+        assertEquals(1, StringCalculator.add("1"));
+    }
 }
