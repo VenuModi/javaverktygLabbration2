@@ -63,4 +63,16 @@ public class StringCalculatorTest {
     void checkDelimetersOfAnyLengthReturnsSix(){
         assertEquals(6, StringCalculator.add("//[***]\n1***2***3"));
     }
+
+    @Test
+    @DisplayName("Step-8 : Test-1")
+    void checkForMultipleDelimetersReturnsSix(){
+        assertEquals(6, StringCalculator.add("//[*][%]\n1*2%3"));
+    }
+
+    @Test
+    @DisplayName("Step-9 : Test-1")
+    void checkForMultipleCharactersInDelimetersReturnsSix(){
+        assertEquals(6, StringCalculator.add("//[***][%%%]\n1%%%2***3"));
+    }
 }
